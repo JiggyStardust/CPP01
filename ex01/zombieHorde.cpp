@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sniemela <sniemela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/24 08:46:17 by sniemela          #+#    #+#             */
-/*   Updated: 2025/03/24 11:52:56 by sniemela         ###   ########.fr       */
+/*   Created: 2025/03/24 11:40:23 by sniemela          #+#    #+#             */
+/*   Updated: 2025/03/24 12:05:43 by sniemela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie* newZombie( std::string name )
+Zombie* zombieHorde( int N, std::string name )
 {
-	Zombie *ptrzombie = new (std::nothrow) Zombie(name);
-	ptrzombie->announce();
-	return (ptrzombie);
+	Zombie *zombieGang = new Zombie[N]();
+	if (!zombieGang)
+		throw std::bad_alloc();
+	for (int i = 0; i < N; i++)
+		zombieGang[i].setName(name);
+	return (zombieGang);
 }
