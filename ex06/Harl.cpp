@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sniemela <sniemela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/27 15:14:23 by sniemela          #+#    #+#             */
-/*   Updated: 2025/03/27 15:15:01 by sniemela         ###   ########.fr       */
+/*   Created: 2025/03/27 15:13:56 by sniemela          #+#    #+#             */
+/*   Updated: 2025/03/27 15:59:50 by sniemela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,24 +26,47 @@ void Harl::warning( void )
 {
 	std::cout << "I must warn you, if you don't remove the pickles I'm never coming back again." << std::endl;
 }
-
 void Harl::error( void )
 {
 	std::cout << "Sorry, this is unacceptable, give me my money back." << std::endl;
 }
 
-void Harl::complain( std::string level)
+int	returnIndex(std::string level)
 {
 	std::string levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-	void (Harl::*actions[])() = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 	for (int i = 0; i < 4; i++)
 	{
 		if (levels[i] == level)
-		{
-			(this->*actions[i])();
-			return ;
-		}
+			return (i);
 	}
-	std::cout << "Didnt match any complain level." << std::endl;
+	return (4);
+}
+
+void Harl::complain( std::string level)
+{
+	void (Harl::*actions[])() = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+	int i = returnIndex(level);
+	switch (i)
+	{
+		case 0 :
+			std::cout << "DEBUG:" << std::endl;
+			(this->*actions[i])();
+			i++;
+		case 1 :
+			std::cout << "INFO:" << std::endl;
+			(this->*actions[i])();
+			i++;
+		case 2 :
+			std::cout << "WARNING:" << std::endl;
+			(this->*actions[i])();
+			i++;
+		case 3 :
+			std::cout << "ERROR:" <<	 std::endl;
+			(this->*actions[i])();
+			break;
+		default:
+			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+			return ;
+	}
 	return ;
 }

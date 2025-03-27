@@ -5,15 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: sniemela <sniemela@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/03/26 08:48:11 by sniemela          #+#    #+#              #
-#    Updated: 2025/03/26 08:48:14 by sniemela         ###   ########.fr        #
+#    Created: 2025/03/27 15:13:31 by sniemela          #+#    #+#              #
+#    Updated: 2025/03/27 15:13:48 by sniemela         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = SedIsForLosers
+NAME = Harl2.0
 CPPFLAGS = -Wall -Werror -Wextra -std=c++11
 CPP = c++
 SOURCES = main.cpp \
+			Harl.cpp
 
 OBJDIR = obj
 OBJS = $(SOURCES:%.cpp=$(OBJDIR)/%.o)

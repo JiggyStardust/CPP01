@@ -5,26 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sniemela <sniemela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/27 15:13:18 by sniemela          #+#    #+#             */
-/*   Updated: 2025/03/27 15:13:22 by sniemela         ###   ########.fr       */
+/*   Created: 2025/03/24 14:20:10 by sniemela          #+#    #+#             */
+/*   Updated: 2025/03/24 14:38:42 by sniemela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#include <string>
+#include <iostream>
 
-int main(void) {
-    Harl harl;
+int main(void)
+{
+	std::string brain = "HI THIS IS BRAIN";
+	std::string *stringPTR = &brain;
+	std::string &stringREF = brain;
 
-    std::cout << "\nComplain level: Info" << std::endl;
-    harl.complain("INFO");
-    std::cout << "\nComplain level: Debug" << std::endl;
-    harl.complain("DEBUG");
-    std::cout << "\nComplain level: Warning" << std::endl;
-    harl.complain("WARNING");
-    std::cout << "\nComplain level: Error" << std::endl;
-    harl.complain("ERROR");
-    std::cout << "\nComplain level: Yolo" << std::endl;
-    harl.complain("YOLO");
+	std::cout << "mem address of string: " << &brain << "\n" \
+			<< "mem address of stringPTR: "<< stringPTR << "\n" \
+			<< "mem address of stringREF: " << &stringREF << std::endl;
 
-    return 0;
+	std::cout << "value of string: " << brain << "\n" \
+			<< "value of stringPTR: "<< *stringPTR << "\n" \
+			<< "value of stringREF: " << stringREF << std::endl;
+	return (0);
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Harl.hpp                                           :+:      :+:    :+:   */
+/*   header.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sniemela <sniemela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/27 15:14:17 by sniemela          #+#    #+#             */
-/*   Updated: 2025/03/27 15:14:19 by sniemela         ###   ########.fr       */
+/*   Created: 2025/03/24 16:41:43 by sniemela          #+#    #+#             */
+/*   Updated: 2025/03/24 16:46:15 by sniemela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,4 @@
 
 #include <iostream>
 #include <string>
-
-class Harl
-{
-	private:
-		void debug( void );
-		void info( void );
-		void warning( void );
-		void error( void );
-	public:
-		void complain( std::string level);
-};
+#include <fstream>
