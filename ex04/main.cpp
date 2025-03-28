@@ -6,7 +6,7 @@
 /*   By: sniemela <sniemela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 08:47:36 by sniemela          #+#    #+#             */
-/*   Updated: 2025/03/28 12:40:14 by sniemela         ###   ########.fr       */
+/*   Updated: 2025/03/28 13:33:41 by sniemela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,15 @@
 void	outputToReplace(std::string s1, std::string s2, std::ofstream &outfile, std::ifstream &infile)
 {
 	std::string line;
-	while (std::getline(infile, line))
+	std::getline(infile, line, '\0');
+	std::size_t pos = 0;
+	while ((pos = line.find(s1, pos)) != std::string::npos)
 	{
-		std::size_t pos = 0;
-		while ((pos = line.find(s1, pos)) != std::string::npos)
-		{
-			line.erase(pos, s1.length());
-			line.insert(pos, s2);
-			pos += s2.length();
-		}
-		outfile << line << std::endl;
+		line.erase(pos, s1.length());
+		line.insert(pos, s2);
+		pos += s2.length();
 	}
+	outfile << line;
 }
 
 int main(int ac, char **av)
@@ -35,6 +33,9 @@ int main(int ac, char **av)
 		std::cout << "Arguments: filename, string1 and string2" << std::endl;
 		return (0);
 	}
+	std::string s1 = av[2];
+	if (s1.compare("") == 0)
+		return (1);
 	std::ifstream infile(av[1]);
 	if (!infile)
 	{
@@ -49,7 +50,6 @@ int main(int ac, char **av)
         infile.close();
 		return (1);
     }
-	std::string s1 = av[2];
 	std::string s2 = av[3];
 	outputToReplace(s1, s2, outfile, infile);
 	infile.close();
