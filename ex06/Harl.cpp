@@ -6,29 +6,42 @@
 /*   By: sniemela <sniemela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 15:13:56 by sniemela          #+#    #+#             */
-/*   Updated: 2025/03/27 15:59:50 by sniemela         ###   ########.fr       */
+/*   Updated: 2025/03/28 13:15:28 by sniemela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "Harl.hpp"
+
+Harl::Harl ( void ) {
+	// std::cout << "Constructor" << std::endl;
+}
+
+Harl::~Harl ( void ) {
+	// std::cout << "Destructor" << std::endl;
+}
 
 void Harl::debug( void )
 {
-	std::cout << "Hi, I just wanted to make sure you didn't add pickles as I requested?" << std::endl;
+	std::cout << "[ DEBUG ]" << std::endl;
+	std::cout << "Hi, I just wanted to make sure you didn't add pickles as I requested?\n" << std::endl;
 }
 
 void Harl::info( void )
 {
-	std::cout << "I'm pretty sure you added pickles, because I'm allergic to them and now my nose is all runny." << std::endl;
+	std::cout << "[ INFO ]" << std::endl;
+	std::cout << "I'm pretty sure you added pickles, because I'm allergic to them and now my nose is all runny.\n" << std::endl;
 }
 
 void Harl::warning( void )
 {
-	std::cout << "I must warn you, if you don't remove the pickles I'm never coming back again." << std::endl;
+	std::cout << "[ WARNING ]" << std::endl;
+	std::cout << "I must warn you, if you don't remove the pickles I'm never coming back again.\n" << std::endl;
 }
 void Harl::error( void )
 {
-	std::cout << "Sorry, this is unacceptable, give me my money back." << std::endl;
+	std::cout << "[ ERROR ]" <<	 std::endl;
+	std::cout << "Sorry, this is unacceptable, give me my money back.\n" << std::endl;
 }
 
 int	returnIndex(std::string level)
@@ -49,19 +62,15 @@ void Harl::complain( std::string level)
 	switch (i)
 	{
 		case 0 :
-			std::cout << "DEBUG:" << std::endl;
 			(this->*actions[i])();
 			i++;
 		case 1 :
-			std::cout << "INFO:" << std::endl;
 			(this->*actions[i])();
 			i++;
 		case 2 :
-			std::cout << "WARNING:" << std::endl;
 			(this->*actions[i])();
 			i++;
 		case 3 :
-			std::cout << "ERROR:" <<	 std::endl;
 			(this->*actions[i])();
 			break;
 		default:

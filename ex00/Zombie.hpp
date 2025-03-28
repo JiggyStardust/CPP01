@@ -6,7 +6,7 @@
 /*   By: sniemela <sniemela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 08:46:44 by sniemela          #+#    #+#             */
-/*   Updated: 2025/03/24 10:52:24 by sniemela         ###   ########.fr       */
+/*   Updated: 2025/03/28 09:39:13 by sniemela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Zombie
 		std::string _name;
 
 	public:
-		void announce( void ); // member function is used like .announce(); ?
+		void announce( void );
 		Zombie(std::string name);
 		~Zombie( void );
 };

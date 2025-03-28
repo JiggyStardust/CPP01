@@ -6,7 +6,7 @@
 /*   By: sniemela <sniemela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 08:46:21 by sniemela          #+#    #+#             */
-/*   Updated: 2025/03/24 10:55:59 by sniemela         ###   ########.fr       */
+/*   Updated: 2025/03/28 09:39:04 by sniemela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,3 @@ int	main(void)
 	randomChump("Elmeri");
 	return (0);
 }
-
-// try
-// {
-// 	Zombie zombie2 = newZombie("Iisakki");
-// }
-// catch (std::bad_alloc &e)
-// 	return 1;

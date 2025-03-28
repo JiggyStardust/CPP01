@@ -6,7 +6,7 @@
 /*   By: sniemela <sniemela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 15:13:12 by sniemela          #+#    #+#             */
-/*   Updated: 2025/03/27 15:13:15 by sniemela         ###   ########.fr       */
+/*   Updated: 2025/03/28 12:59:56 by sniemela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,6 @@ class Harl
 		void error( void );
 	public:
 		void complain( std::string level);
+		Harl( void );
+		~Harl( void );
 };
